@@ -5,7 +5,9 @@
   <div class="container">
     <h1>Week 2</h1>
     <p>
-      {{ names }}
+      {% for name in names %}
+        {{ name }} <br/>
+      {% endfor %}
     </p>
 
   </div>

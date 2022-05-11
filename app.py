@@ -12,8 +12,5 @@ def about():
 	names = ["Joe", "Bill", "Wes"]
 	return render_template("about.html", names=names)
 
-@app.route('/projects')
-def projects():
-	title = "Projects List"
 
-	return render_template("projects.html", title=title)
+
