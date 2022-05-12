@@ -25,4 +25,17 @@ def dispproject():
 	prj_title = request.form.get("prj_title")
 	est_start = request.form.get("est_start")
 	est_cost = request.form.get("est_cost")
-	return render_template("dispproject.html", title=title, prj_title=prj_title, est_start = est_start, est_cost=est_cost )
+
+	if not prj_title or not est_start or not est_cost:
+		error_message = "All fields required"
+		return render_template("addproject.html", error_message=error_message,
+				title=title, 
+				prj_title=prj_title,  
+				est_start = est_start, 
+				est_cost=est_cost)
+
+	return render_template("dispproject.html", 
+		title=title, prj_title=prj_title,  
+		est_start = est_start, est_cost=est_cost )
+
+

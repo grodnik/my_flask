@@ -6,11 +6,46 @@
 {% block content %}
 
 	<div class="container">
+
     <h1>Display Project</h1>
     <br/><br/>
     {{prj_title}}<br/>
     {{est_start}}<br/>
     {{est_cost}}<br/>
-  </div>
+    {{ error_message }}
+ 
+
+        <form action="/dispproject" method="POST">
+
+        <div class="mb-3">
+          <label for="ProjectTitle" class="form-label">Project Title</label>
+          <input type="text" class="form-control" id="ProjectTitle" 
+          aria-describedby="emailHelp" placeholder="Project Title"
+          name="prj_title", value="{{ prj_title }}">
+        </div>
+
+
+        <div class="mb-3">
+          <label for="EstStart" class="form-label">Est. Start</label>
+          <input type="text" class="form-control" id="EstStart" 
+          aria-describedby="emailHelp" placeholder="Estimated Start"
+          name = "est_start" value="{{ est_start}}">
+        </div>
+
+        <div class="mb-3">
+          <label for="EstCost" class="form-label">Est. Cost</label>
+          <input type="text" class="form-control" id="EstCost" 
+          aria-describedby="emailHelp" placeholder="Estimated Cost"
+          name = "est_cost" value= "{{ est_cost}} ">
+        </div>
+
+        <br/><br/>
+
+        <button type="submit" class="btn btn-secondary">Submit</button>
+
+      </form>
+
+    </div>
+
 
 {% endblock %}
