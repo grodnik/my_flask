@@ -5,13 +5,15 @@
 
 {% block content %}
 
-	<div class="container">
+  <div class="container">
 
-    <h1>Display Project</h1>
+    <h1>Error</h1>
+    <h2>
+    {{ error_message }}
+    </h2>
     <br/><br/>
 
-
-        <form action="/dispproject" method="POST">
+          <form action="/dispproject" method="POST">
 
         <div class="mb-3">
           <label for="ProjectTitle" class="form-label">Project Title</label>
@@ -40,8 +42,6 @@
         <button type="submit" class="btn btn-secondary">Submit</button>
 
       </form>
-
-    </div>
 
 
 {% endblock %}
